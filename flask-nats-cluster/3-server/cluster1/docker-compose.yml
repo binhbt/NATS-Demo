@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nats:
+    image: 'nats'
+    command: 
+      - "-D"
+      - "-p"
+      - "4222"
+      - "-cluster"
+      - "nats://nats:6222"
+      - "-routes"
+      - "nats://178.128.212.211:6222"
+    expose:
+      - "4222"
+      - "8222"
+      - "6222"
+    ports:
+      - "8222:8222"
+      - "4222:4222"
