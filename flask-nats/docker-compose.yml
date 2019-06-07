@@ -1,0 +1,25 @@
+version: '3'
+services:
+  pub:
+    build: .
+    ports:
+     - "5000:5000"
+    volumes:
+     - .:/code
+    depends_on:
+     - redis
+  redis:
+    image: redis
+    ports:
+     - "6380:6379"
+    expose:
+     - 6380
+  nats:
+    image: 'nats:0.8.0'
+    entrypoint: "/gnatsd -DV -m 8222"
+    expose:
+      - "4222"
+      - "8222"
+    ports:
+      - "8222:8222"
+      - "4222:4222"

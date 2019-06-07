@@ -1,0 +1,7 @@
+flask
+redis
+Flask-SSE
+flask-blueprint
+uwsgi
+asyncio
+asyncio-nats-client
