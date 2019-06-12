@@ -8,7 +8,7 @@ async def example():
    # [begin subscribe_async]
    nc = NATS()
 
-   await nc.connect(servers=["nats://188.166.238.142:4222"])
+   await nc.connect(servers=["nats://188.166.238.100:4222"])
 
    future = asyncio.Future()
 
